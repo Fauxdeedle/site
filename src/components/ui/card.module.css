@@ -1,0 +1,55 @@
+.card {
+  background-color: var(--green-800);
+  border: 1px solid var(--green-700);
+  padding: var(--space-lg);
+  transition: transform var(--motion-base) var(--motion-easing),
+              box-shadow var(--motion-base) var(--motion-easing),
+              border-color var(--motion-fast);
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translate(-6px, -6px);
+  box-shadow: 6px 6px 0px var(--green-600);
+  border-color: var(--green-600);
+}
+
+.cardAccent {
+  background-color: var(--green-700);
+}
+
+.cardAccent:hover {
+  box-shadow: 6px 6px 0px var(--brand-400);
+  border-color: var(--brand-400);
+}
+
+.header {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--font-size-lg);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--green-50);
+  margin-bottom: var(--space-sm);
+}
+
+.content {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  color: var(--green-100);
+  line-height: var(--line-height-relaxed);
+}
+
+.label {
+  font-family: var(--font-heading);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--green-300);
+  margin-top: var(--space-md);
+  display: block;
+}
+
+.cardAccent .label {
+  color: var(--brand-400);
+}

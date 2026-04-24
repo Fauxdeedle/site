@@ -1,0 +1,44 @@
+.button {
+  display: inline-block;
+  border: 2px solid;
+  cursor: pointer;
+  transition: transform var(--motion-base) var(--motion-easing),
+              box-shadow var(--motion-base) var(--motion-easing),
+              background var(--motion-fast),
+              color var(--motion-fast),
+              border-color var(--motion-fast);
+}
+
+.primary {
+  background: var(--brand-400);
+  color: var(--green-900);
+  border-color: var(--brand-400);
+}
+
+.primary:hover {
+  background: var(--green-900);
+  color: var(--brand-400);
+  border-color: var(--brand-400);
+}
+
+.secondary {
+  background: transparent;
+  color: var(--green-50);
+  border-color: var(--green-300);
+}
+
+.secondary:hover {
+  color: var(--brand-400);
+  border-color: var(--brand-400);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--green-300);
+  border-color: transparent;
+}
+
+.ghost:hover {
+  color: var(--brand-400);
+  text-decoration: underline;
+}

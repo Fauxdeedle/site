@@ -1,0 +1,32 @@
+.section {
+  padding: var(--space-2xl) 0;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: var(--font-size-3xl);
+  color: var(--brand-400);
+  margin-bottom: var(--space-xl);
+  letter-spacing: 0.05em;
+  text-align: left;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-md);
+}
+
+.cardLink {
+  text-decoration: none;
+}
+
+.cardLink:hover {
+  text-decoration: none;
+}

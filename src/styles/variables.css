@@ -1,0 +1,73 @@
+:root {
+  /* Brand Colors - Yellow/Amber */
+  --brand-50: #fffbe0;
+  --brand-100: #fff3a3;
+  --brand-300: #ffe866;
+  --brand-400: #ffdd44;
+  --brand-600: #d4b000;
+  --brand-800: #8a7000;
+  --brand-900: #4a3c00;
+
+  /* Green Colors - Forest */
+  --green-50: #eaf5ec;
+  --green-100: #c2dfc8;
+  --green-300: #6faf80;
+  --green-500: #3d7a52;
+  --green-600: #2f6140;
+  --green-700: #1f4a2e;
+  --green-800: #153620;
+  --green-900: #0c2215;
+
+  /* Semantic Colors */
+  --color-bg: var(--green-900);
+  --color-bg-subtle: var(--green-800);
+  --color-text: var(--green-50);
+  --color-text-muted: var(--green-300);
+  --color-link: var(--brand-400);
+  --color-border: var(--green-700);
+  --color-accent: var(--brand-400);
+
+  /* Typography - Google Fonts */
+  --font-display: "Bebas Neue", sans-serif;
+  --font-heading: "Barlow Condensed", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+  --font-serif: "EB Garamond", serif;
+
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 3rem;
+  --font-size-display: clamp(64px, 12vw, 160px);
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 32px;
+  --space-xl: 64px;
+  --space-2xl: 128px;
+
+  /* Line Heights */
+  --line-height-tight: 0.92;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.65;
+
+  /* Letter Spacing */
+  --letter-spacing-tight: 0.01em;
+  --letter-spacing-normal: 0.02em;
+  --letter-spacing-wide: 0.12em;
+  --letter-spacing-wider: 0.16em;
+
+  /* Layout */
+  --max-width: 1400px;
+  --header-height: 80px;
+
+  /* Motion */
+  --motion-fast: 120ms;
+  --motion-base: 200ms;
+  --motion-easing: cubic-bezier(0.4, 0, 0.2, 1);
+}
