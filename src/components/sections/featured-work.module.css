@@ -30,3 +30,47 @@
 .cardLink:hover {
   text-decoration: none;
 }
+
+.card {
+  background: var(--green-800);
+  border: 1px solid var(--green-700);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: border-color var(--motion-base) var(--motion-easing), background var(--motion-base) var(--motion-easing);
+  overflow: hidden;
+}
+
+.cardLink:hover .card {
+  background: var(--green-700);
+  border-color: var(--green-500);
+}
+
+.cardAccent {
+  border-left: 3px solid var(--brand-400);
+}
+
+.cardImage {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  margin-bottom: var(--space-md);
+}
+
+.label {
+  font-family: var(--font-display);
+  font-size: var(--font-size-2xl);
+  color: var(--brand-400);
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--space-sm);
+}
+
+.content {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  color: var(--green-100);
+  line-height: var(--line-height-normal);
+}

@@ -33,3 +33,12 @@ src/
 - Server Components by default; add `"use client"` only for interactivity
 - Route groups `(name)` organize without affecting URLs
 - Barrel exports in `components/ui/index.ts` for clean imports
+
+## Adding a Project
+
+1. Copy `src/content/projects/_template.md` to `src/content/projects/your-slug.md`
+2. Drop the screenshot into `public/images/projects/your-filename.jpg`
+3. Fill in the frontmatter: `title`, `description`, `date`, `image` (`/images/projects/your-filename.jpg`)
+4. Write body content below the `---`
+
+The project auto-appears on the homepage grid and gets its own page at `/projects/your-slug`.

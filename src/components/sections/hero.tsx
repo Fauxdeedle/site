@@ -10,7 +10,10 @@ interface HeroProps {
 export function Hero({ title, description }: HeroProps) {
   return (
     <section className={styles.hero}>
-      <div className={styles.ghostText}>MAKE</div>
+      
+      {/*This line makes ghost text on the hero background*/}
+      {/*<div className={styles.ghostText}>MAKE</div>*/}
+
       <div className={styles.container}>
         <div className={styles.badges}>
           <Badge>Brand Identity</Badge>
