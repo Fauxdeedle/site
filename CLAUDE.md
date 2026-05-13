@@ -25,11 +25,7 @@ src/
 └── styles/        # CSS variables, mixins
 ```
 
-**Styling:** Plain CSS with CSS Modules (`*.module.css`) for component scoping. Design tokens in `src/styles/variables.css` - edit there for global theme changes.
-
-**Style Examples:**
-- `src/styles/examples/main/` — Authoritative source for all styling. Reference these files when making components or restyling any part of the site.
-- `src/styles/examples/ref/` — Reference examples for redesigning components. Use these when redesigning existing components based on example patterns.
+**Styling:** Plain CSS with CSS Modules (`*.module.css`) for component scoping. Design tokens in `src/styles/variables.css` - edit there for global theme changes. ALWAYS reference [examples](src/examples) when making visual updates
 
 **Blog/Content:** Markdown files in `src/content/` with frontmatter. Use `getPosts()` and `getPost()` from `src/lib/markdown.ts`.
 
