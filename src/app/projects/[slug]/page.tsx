@@ -1,5 +1,6 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getPost, getPosts } from "@/lib/markdown";
+import { getPost, getPosts, parseFrontmatter } from "@/lib/markdown";
 import styles from "./projects.module.css";
 
 interface PageProps {
@@ -21,31 +22,53 @@ export default async function ProjectPage({ params }: PageProps) {
     notFound();
   }
 
-  const { title, description, date, image } = project.frontmatter;
+  const { title, description, image } = project.frontmatter;
+  const { content } = parseFrontmatter(project.content);
+
+  // Convert markdown headings and paragraphs to basic HTML
+  const htmlContent = content
+    .replace(/^### (.+)$/gm, "<h3>$1</h3>")
+    .replace(/^## (.+)$/gm, "<h2>$1</h2>")
+    .replace(/^# (.+)$/gm, "")
+    .replace(/^\- (.+)$/gm, "<li>$1</li>")
+    .replace(/(<li>[\s\S]+?<\/li>)/g, (match) => `<ul>${match}</ul>`)
+    .split(/\n{2,}/)
+    .map((block) => {
+      const trimmed = block.trim();
+      if (!trimmed) return "";
+      if (trimmed.startsWith("<")) return trimmed;
+      return `<p>${trimmed.replace(/\n/g, " ")}</p>`;
+    })
+    .filter(Boolean)
+    .join("\n");
 
   return (
-    <article className={styles.container}>
-      <div className={styles.split}>
-        <div className={styles.imageSection}>
-          {image ? (
-            <img src={image} alt={title} className={styles.projectImage} />
-          ) : (
-            <div className={styles.imagePlaceholder} />
-          )}
-        </div>
-        <div className={styles.contentSection}>
-          <header className={styles.header}>
-            <h1 className={styles.title}>{title}</h1>
+    <div className={styles.page}>
+      {image ? (
+        <img src={image} alt={title} className={styles.bg} aria-hidden="true" />
+      ) : (
+        <div className={styles.bgPlaceholder} aria-hidden="true" />
+      )}
+
+      <div className={styles.panel}>
+        <Link href="/" className={styles.back}>
+          ← Back
+        </Link>
+
+        <h1 className={styles.title}>{title}</h1>
+
+        {description && (
+          <>
+            <p className={styles.sectionLabel}>What I Did In This Project</p>
             <p className={styles.description}>{description}</p>
-            <time className={styles.date} dateTime={date}>
-              {date}
-            </time>
-          </header>
-          <div className={styles.content}>
-            <p>{project.content}</p>
-          </div>
-        </div>
+          </>
+        )}
+
+        <div
+          className={styles.content}
+          dangerouslySetInnerHTML={{ __html: htmlContent }}
+        />
       </div>
-    </article>
+    </div>
   );
 }
