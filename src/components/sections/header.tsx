@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { siteConfig } from "@/lib/site-config";
 import styles from "./header.module.css";
 
 export function Header() {
@@ -6,7 +7,7 @@ export function Header() {
     <header className={styles.header}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
-          Dylan Scoble
+          {siteConfig.name}
         </Link>
         <nav className={styles.nav}>
           <Link href="/blog" className={styles.link}>

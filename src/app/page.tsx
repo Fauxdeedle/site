@@ -10,10 +10,7 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <Hero
-          title="Your Name"
-          description="Full-stack developer building things that matter"
-        />
+        <Hero />
         <About />
         <FeaturedWork />
         <Contact />

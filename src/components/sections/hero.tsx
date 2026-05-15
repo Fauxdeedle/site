@@ -1,24 +1,23 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/lib/site-config";
 import styles from "./hero.module.css";
 
-interface HeroProps {
-  title: string;
-  description: string;
-}
-
-export function Hero({ title, description }: HeroProps) {
+export function Hero() {
+  const { title, description, badges, buttons } = siteConfig.hero;
   return (
     <section className={styles.hero}>
-      
+
       {/*This line makes ghost text on the hero background*/}
       {/*<div className={styles.ghostText}>MAKE</div>*/}
 
       <div className={styles.container}>
         <div className={styles.badges}>
-          <Badge>Brand Identity</Badge>
-          <Badge color="var(--green-100)">Print &amp; Posters</Badge>
-          <Badge color="var(--green-300)">Social Media</Badge>
+          {badges.map((badge, i) => (
+            <Badge key={badge} color={i === 1 ? "var(--green-100)" : i === 2 ? "var(--green-300)" : undefined}>
+              {badge}
+            </Badge>
+          ))}
         </div>
         <h1 className={styles.title}>
           <span className={styles.titleLine}>{title.split(".")[0] || title}</span>
@@ -28,8 +27,8 @@ export function Hero({ title, description }: HeroProps) {
         </h1>
         <p className={styles.description}>{description}</p>
         <div className={styles.actions}>
-          <Button variant="primary" size="lg">View Work</Button>
-          <Button variant="secondary" size="lg">Contact Me</Button>
+          <Button variant="primary" size="lg">{buttons.primary}</Button>
+          <Button variant="secondary" size="lg">{buttons.secondary}</Button>
         </div>
       </div>
     </section>
