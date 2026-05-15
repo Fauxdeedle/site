@@ -2,7 +2,10 @@
   position: relative;
   padding: 80px 48px 64px;
   overflow: hidden;
-  background: url('/images/site/Background.png') center / cover no-repeat var(--green-700);
+  background-color: var(--green-700);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .ghostText {

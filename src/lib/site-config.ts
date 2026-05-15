@@ -7,6 +7,7 @@ export const siteConfig = {
   hero: {
     title: "Dylan Scoble",
     description: "Full-stack developer building things that matter",
+    backgroundImage: "/images/site/Background.png",
     badges: ["Brand Identity", "Print & Posters", "Social Media"],
     buttons: {
       primary: "View Work",

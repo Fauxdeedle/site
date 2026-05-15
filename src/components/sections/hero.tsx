@@ -4,9 +4,9 @@ import { siteConfig } from "@/lib/site-config";
 import styles from "./hero.module.css";
 
 export function Hero() {
-  const { title, description, badges, buttons } = siteConfig.hero;
+  const { title, description, backgroundImage, badges, buttons } = siteConfig.hero;
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} style={{ backgroundImage: `url('${backgroundImage}')` }}>
 
       {/*This line makes ghost text on the hero background*/}
       {/*<div className={styles.ghostText}>MAKE</div>*/}

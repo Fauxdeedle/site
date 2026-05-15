@@ -59,6 +59,12 @@ image: "/images/projects/your-file.jpg"
 ```tsx
 <img src="/images/site/your-file.jpg" alt="..." />
 ```
+## Content Updates
+
+**Single source of truth:** `src/lib/site-config.ts` controls all text and image content on the homepage. Whenever any content is added or changed on the site — including names, bio, skills, contact links, hero text, badges, button labels, or images — update `site-config.ts` to match. Never hardcode content directly in component files.
+
+**Project pages** are the exception — their content lives in `src/content/projects/*.md` frontmatter and body, not in `site-config.ts`.
+
 ## Checking updates
 
 **local server**
