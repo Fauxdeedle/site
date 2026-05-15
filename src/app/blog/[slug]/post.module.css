@@ -29,3 +29,11 @@
 .content p {
   margin-bottom: var(--space-lg);
 }
+
+.content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: var(--space-xl) auto;
+  border-radius: 4px;
+}

@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { marked } from "marked";
 
 // Parse frontmatter from markdown content
 export function parseFrontmatter(content: string) {
@@ -54,6 +55,10 @@ export function getPosts(dir: string) {
       content,
     };
   });
+}
+
+export function markdownToHtml(markdown: string): string {
+  return marked(markdown) as string;
 }
 
 // Get a single post by slug

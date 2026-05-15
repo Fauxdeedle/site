@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getPost, getPosts } from "@/lib/markdown";
+import { getPost, getPosts, markdownToHtml } from "@/lib/markdown";
 import styles from "./post.module.css";
 
 interface PageProps {
@@ -21,6 +21,8 @@ export default async function BlogPost({ params }: PageProps) {
     notFound();
   }
 
+  const html = markdownToHtml(post.content);
+
   return (
     <article className={styles.container}>
       <header className={styles.header}>
@@ -29,9 +31,10 @@ export default async function BlogPost({ params }: PageProps) {
           {post.frontmatter.date}
         </time>
       </header>
-      <div className={styles.content}>
-        <p>{post.content}</p>
-      </div>
+      <div
+        className={styles.content}
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
     </article>
   );
 }

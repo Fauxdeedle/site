@@ -42,3 +42,24 @@ src/
 4. Write body content below the `---`
 
 The project auto-appears on the homepage grid and gets its own page at `/projects/your-slug`.
+
+## Adding Images
+
+**Project images** — Drop the file into `public/images/projects/`, then reference it in the frontmatter:
+```
+image: "/images/projects/your-file.jpg"
+```
+
+**Blog inline images** — Drop the file into `public/images/blog/`, then use standard markdown syntax in the post body:
+```
+![Alt text](/images/blog/your-file.jpg)
+```
+
+**Site images** (profile photo, decorative, etc.) — Drop the file into `public/images/site/`, then reference it in the relevant component:
+```tsx
+<img src="/images/site/your-file.jpg" alt="..." />
+```
+## Checking updates
+
+**local server**
+usually the server is hosted locally on localhost:3000. check there before trying to host the site to check changes
